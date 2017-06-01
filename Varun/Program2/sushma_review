@@ -1,0 +1,3 @@
+Your code seems good, except that it may be modular just as vathul specified. 
+My doubt:
+Math.sqrt is found in java.lang.Math , so I don't understand why java.math needs to be imported
