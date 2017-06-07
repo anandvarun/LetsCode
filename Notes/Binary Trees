@@ -1,0 +1,24 @@
+Binary Tree:
+  Every node has two children
+ 
+  Maximum number of nodes at a given level l = 2 * 2 ^(l-1)
+  
+  For a given height h number of nodes = ( 2 ^ h ) - 1
+  
+  Mininum height for N nodes is log 2 (N+1)
+  
+Fun fact:
+  
+  Number of leaf nodes is greater than nodes with two children
+  
+Types:
+
+  Full ( all have 0 or 2 children )
+  Balanced( AVL is important , Red -Black Trees ) 
+  Perfect binary tree ( all have two children )
+  Degenerate Tree ( similar to linked list )
+  
+  
+Applications:
+
+AVL -- when binary tree is skewed it  the search space is no longer smaller ,  so AVL trees are used to balance it
