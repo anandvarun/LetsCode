@@ -1,5 +1,5 @@
 Binary Tree:
-  Every node has two children
+  Every node has atmost two children
  
   Maximum number of nodes at a given level l = 2 * 2 ^(l-1)
   
@@ -9,7 +9,7 @@ Binary Tree:
   
 Fun fact:
   
-  Number of leaf nodes is greater than nodes with two children
+  Number of leaf nodes is greater than no. of nodes with two children
   
 Types:
 
@@ -22,3 +22,10 @@ Types:
 Applications:
 
 AVL -- when binary tree is skewed it  the search space is no longer smaller ,  so AVL trees are used to balance it
+
+The height(right sub tree)-height (left sub tree) = { -1, 0 , 1}
+
+Why not exactly 0 ? Ensuring a particular height diff involves many rotations which is computationally intensive
+
+
+
