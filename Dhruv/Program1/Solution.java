@@ -23,15 +23,19 @@ class Node {
 }
 
 
-// Solution: 
+// Solution 1: 
 // Basic idea is to do an inorder traversal (left, node, right) and at the node step, compare the node value to the previous one (the one which was at the node)
 // step before this one. If it is an ascending, then its good else its bad.
+
+// Solution 2: 
+// Min max method
 
 class Solution {
 	
 	public static Integer last = null;
 
 	public static void main(String[] args) {
+		System.out.println("In order with static variable way");
 		//invalid case
 		Node root1 = new Node(10);
 		Node left1 = new Node(5);
@@ -62,11 +66,18 @@ class Solution {
 		last = null;
 
 		//Using the wrapper way
-
+		System.out.println("In order wrapper way");
 		System.out.println(checkBSTv2(root1));
 		System.out.println(checkBSTv2(root2));
 		System.out.println(checkBSTv2(root3));
 
+		//Using the min max way
+		System.out.println("Min max way");
+		int min = Integer.MIN_VALUE;
+		int max = Integer.MAX_VALUE;
+		System.out.println(checkBSTv3(root1,max, min));
+		System.out.println(checkBSTv3(root2, max, min));
+		System.out.println(checkBSTv3(root3, max, min));
 
 	}
 
@@ -116,6 +127,29 @@ class Solution {
 		if(!checkBSTv2(root.right, lastWrapper)) return false;
 
 		return true;
+	}
+
+
+	public static boolean checkBSTv3 (Node root, int max, int min) {
+		
+		if(root == null) return true;
+		
+		//left subtree check
+		if(!checkBSTv3(root.left, root.data, min)){
+			return false;
+		}
+
+		if(root.data <= min || root.data >= max ) {
+			return false;
+		}
+
+		//right subtree check
+		if(!checkBSTv3(root.right, max, root.data)){
+			return false;
+		}
+
+		return true;
+
 	}
 }
 
