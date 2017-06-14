@@ -30,6 +30,10 @@ class Node {
 // Solution 2: 
 // Min max method
 
+
+// Analysis
+// Both solutions are O(n) in time and space.. I'm considering the function call stack to account for this space.
+// 
 class Solution {
 	
 	public static Integer last = null;
